@@ -49,15 +49,15 @@ class Animal(models.Model):
         ('b', 'Braunbär')
     )
 
-    family = models.CharField(max_length=1, choices=CHOICES1)
-    category = models.CharField(max_length=1, choices=CHOICES2)
+    family = models.CharField(max_length=2, choices=CHOICES1)
+    category = models.CharField(max_length=2, choices=CHOICES2)
     name = models.TextField()
     origin_land = models.TextField(blank=True)
     date_of_birth = models.DateField()
     age = models.IntegerField()
     food = models.TextField()
-    zoo = models.ForeignKey(Zoo, on_delete=models.CASCADE)
-    zookeeper = models.ForeignKey(Zookeeper, on_delete=models.CASCADE)
+    zoo = models.ForeignKey(Zoo,on_delete=models.CASCADE)
+    zookeeper = models.ForeignKey(Zookeeper,on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
