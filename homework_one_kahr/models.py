@@ -1,39 +1,39 @@
 from django.db import models
 
 
-''' class Zoo(models.Model):
+class Zoo(models.Model):
     name = models.TextField()
     address = models.TextField()
-    code = models.TextField()
-    street = models.TextField()
+    postal_code = models.TextField()
+    town = models.TextField()
     land = models.TextField()
-    telephone = models.TextField()
+    telephone_number = models.TextField(blank=True)
     mail = models.TextField(blank=True)
 
     def __str__(self):
-        return self.name '''
+        return self.name
 
 
-''' class Zookeeper(models.Model):
+class Zookeeper(models.Model):
     first_name = models.TextField()
     last_name = models.TextField()
     date_of_birth = models.DateField(blank=True)
-    adjusted = models.DateField()
+    adjusted_since = models.DateField()
     salary = models.IntegerField()
-    telephone = models.TextField()
+    telephone_number = models.TextField(blank=True)
 
     def __str__(self):
-        return self.first_name '''
+        return self.first_name
 
 
 class Animal(models.Model):
     CHOICES1 = (
-        ('g', 'Großkatzen'),
+        ('gk','Großkatzen'),
         ('kk','Kleinkatzen'),
         ('p', 'Primaten'),
         ('h', 'Hunde'),
         ('k', 'Kamele'),
-        ('b', 'Großbären'),
+        ('gb','Großbären'),
         ('pf','Pferde'),
     )
 
@@ -42,10 +42,10 @@ class Animal(models.Model):
         ('p', 'Puma'),
         ('a', 'Affe'),
         ('w', 'Wolf'),
-        ('t', 'Trampeltier'),
+        ('tt','Trampeltier'),
         ('e', 'Esel'),
-        ('le', 'Leopard'),
-        ('lu', 'Luchs'),
+        ('le','Leopard'),
+        ('lu','Luchs'),
         ('b', 'Braunbär')
     )
 
@@ -56,10 +56,8 @@ class Animal(models.Model):
     date_of_birth = models.DateField()
     age = models.IntegerField()
     food = models.TextField()
-    zoo = models.TextField()
-    zookeeper = models.TextField(blank=True)
-    #zoo = models.ForeignKey(Zoo, on_delete=models.CASCADE, blank=True)
-    #zookeeper = models.ForeignKey(Zookeeper, on_delete=models.CASCADE, blank=True)
+    zoo = models.ForeignKey(Zoo, on_delete=models.CASCADE)
+    zookeeper = models.ForeignKey(Zookeeper, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
