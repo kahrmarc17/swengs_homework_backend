@@ -6,6 +6,120 @@
 	},
 	"item": [
 		{
+			"name": "INSERT one zoo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"name\": \"Tierwelt Herberstein\",\r\n        \"address\": \"Buchberg 50\",\r\n        \"postal_code\": \"8223\",\r\n        \"town\": \"Stubenberg am See\",\r\n        \"land\": \"Österreich\",\r\n        \"telephone_number\": \"03176 80777\",\r\n        \"mail\": \"info (at) tierwelt-herberstein.at\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1/zoo/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"zoo",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INSERT one zookeeper",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"first_name\": \"Max\",\r\n        \"last_name\": \"Mustermann\",\r\n        \"date_of_birth\": \"1965-04-08\",\r\n        \"adjusted_since\": \"2019-11-08\",\r\n        \"salary\": 1300,\r\n        \"telephone_number\": \"\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1/zookeeper/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"zookeeper",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INSERT another zookeeper",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"first_name\": \"John\",\r\n        \"last_name\": \"Doe\",\r\n        \"date_of_birth\": \"1974-06-25\",\r\n        \"adjusted_since\": \"2015-12-11\",\r\n        \"salary\": 1200,\r\n        \"telephone_number\": \"+43 664 6756788\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1/zookeeper/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"zookeeper",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "INSERT one animal",
 			"request": {
 				"method": "POST",
@@ -19,7 +133,45 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "    {\r\n        \"name\": \"Manfred\",\r\n        \"family\": \"k\",\r\n        \"category\": \"t\",\r\n        \"origin_land\": \"Saudi Arabien\",\r\n        \"date_of_birth\": \"2018-11-23\",\r\n        \"age\": 1,\r\n        \"food\": \"Gras\",\r\n        \"zoo\": \"Schönbrunn\",\r\n        \"zookeeper\": \"Maier\"\r\n    }",
+					"raw": "    {\r\n        \"family\": \"gk\",\r\n        \"category\": \"l\",\r\n        \"name\": \"Simba\",\r\n        \"origin_land\": \"Nigeria\",\r\n        \"date_of_birth\": \"2016-10-08\",\r\n        \"age\": 3,\r\n        \"food\": \"Fleisch\",\r\n        \"zoo\": 1,\r\n        \"zookeeper\": 1\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1/animal/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"animal",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INSERT another animal",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"family\": \"p\",\r\n        \"category\": \"a\",\r\n        \"name\": \"Charly\",\r\n        \"origin_land\": \"Brasilien\",\r\n        \"date_of_birth\": \"2017-05-08\",\r\n        \"age\": 2,\r\n        \"food\": \"Bananen\",\r\n        \"zoo\": 1,\r\n        \"zookeeper\": 2\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -66,6 +218,73 @@
 			"response": []
 		},
 		{
+			"name": "GET all zoos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/zoo/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"zoo",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all zookeepers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/zookeeper/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"zookeeper",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET one zookeeper",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/zookeeper/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"zookeeper",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "UPDATE one animal",
 			"request": {
 				"method": "PUT",
@@ -79,7 +298,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "    {\r\n        \"name\": \"Manfred\",\r\n        \"family\": \"k\",\r\n        \"category\": \"t\",\r\n        \"origin_land\": \"Saudi Arabien\",\r\n        \"date_of_birth\": \"2018-11-23\",\r\n        \"age\": 1,\r\n        \"food\": \"Gras\",\r\n        \"zoo\": \"Herberstein\",\r\n        \"zookeeper\": \"Maier\"\r\n    }",
+					"raw": "    {\r\n    \"family\": \"gk\",\r\n    \"category\": \"l\",\r\n    \"name\": \"Simba\",\r\n    \"origin_land\": \"Nigeria\",\r\n    \"date_of_birth\": \"2016-10-08\",\r\n    \"age\": 3,\r\n    \"food\": \"Fleisch, Wurst\",\r\n    \"zoo\": 1,\r\n    \"zookeeper\": 1\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -110,7 +329,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1/animal/1",
+					"raw": "http://127.0.0.1/animal/1/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -120,7 +339,70 @@
 					],
 					"path": [
 						"animal",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE one zoo",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n       \"name\": \"Tierwelt Herberstein (Steirischer Landestiergarten GmbH)\",\r\n       \"address\": \"Buchberg 50\",\r\n       \"postal_code\": \"8223\",\r\n       \"town\": \"Stubenberg am See\",\r\n       \"land\": \"Österreich\",\r\n       \"telephone_number\": \"03176 80777\",\r\n       \"mail\": \"info (at) tierwelt-herberstein.at\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1/zoo/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
 						"1"
+					],
+					"path": [
+						"zoo",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET one zoo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/zoo/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"zoo",
+						"1",
+						""
 					]
 				}
 			},
@@ -143,6 +425,118 @@
 					"path": [
 						"animal",
 						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all animals",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/animal/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"animal",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE one zookeeper",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/zookeeper/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"zookeeper",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all zookeepers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/zookeeper/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"zookeeper",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE one zoo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/zoo/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"zoo",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all zoos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1/zoo/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"path": [
+						"zoo",
 						""
 					]
 				}
